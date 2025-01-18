@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
             ref={textRef}
             id="text"
             className="text-3xl mb-8 text-center drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"
-            style={{ minHeight: "3em", maxWidth: "1em"}} // Adjust this height to match your design
+            style={{ minHeight: "3em", maxWidth: "18em"}} // Adjust this height to match your design
           ></div>
           <Button>Click me</Button>
         </h1>
