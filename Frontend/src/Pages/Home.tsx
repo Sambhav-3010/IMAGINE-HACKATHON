@@ -9,18 +9,22 @@ import Spline from "@/components/Spline";
 
 const Home = () => {
   return (
-    <div className="bg-gradient-to-br from-black via-gray-800 to-black">
+    <div className="">
       <div className="absolute inset-0 z-0">
         <Spline />
       </div>
-      <div className="relative z-10">
-        <Navbar />
-        <Hero />
+      <div className="bg-gradient-to-br from-black via-gray-900 to-black">
+        <div className="relative z-10">
+          <Navbar />
+          <div className="pt-20">
+            <Hero />
+          </div>
+        </div>
+        <CardLayout />
+        <Roadmap />
+        <Faq />
+        <Footer />
       </div>
-      <CardLayout />
-      <Roadmap />
-      <Faq />
-      <Footer />
     </div>
   );
 };

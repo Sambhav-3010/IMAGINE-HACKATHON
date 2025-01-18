@@ -1,6 +1,6 @@
 .animate-slide {
   display: flex;
-  animation: scrolling 9s linear infinite;
+  animation: scrolling 15s linear infinite;
 }
 
 @keyframes scrolling  {
