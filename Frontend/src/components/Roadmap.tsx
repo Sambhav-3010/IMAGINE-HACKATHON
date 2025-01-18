@@ -26,9 +26,8 @@ const Roadmap: React.FC = () => {
   ];
 
   return (
-    <div className="bg-gray-100 text-gray-800 py-12 px-6">
+    <div className="text-gray-800 py-12 px-6">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-8">Project Roadmap</h2>
         <div className="space-y-8">
           {steps.map((step, index) => (
             <div
