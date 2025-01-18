@@ -9,7 +9,7 @@ import Spline from "@/components/Spline";
 
 const Home = () => {
   return (
-    <div className="bg-gradient-to-br from-black via-gray-800 to-black relative">
+    <div className="bg-gradient-to-br from-black via-gray-800 to-black ">
       <div className="absolute inset-0 z-0">
         <Spline />
       </div>
