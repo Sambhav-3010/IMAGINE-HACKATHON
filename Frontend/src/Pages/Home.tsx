@@ -6,6 +6,7 @@ import Roadmap from "@/components/Roadmap";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Spline from "@/components/Spline";
+import Chart from "@/components/Chart";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
         <div id="about" className="scroll-mt-20">
           <CardLayout />
         </div>
+        <Chart />
         <div id="contact" className="scroll-mt-20">
           <Roadmap />
         </div>

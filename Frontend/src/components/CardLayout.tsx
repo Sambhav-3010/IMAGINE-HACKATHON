@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
@@ -29,10 +29,12 @@ const EnhancedCardLayout: React.FC = () => {
               )}
             >
               <CardHeader>
-                <CardTitle className="text-sm font-medium">{card.title}</CardTitle>
+                <CardTitle className="text-xl font-semibold">
+                  {card.title}
+                </CardTitle>
               </CardHeader>
               {card.content && (
-                <CardContent className="text-xs text-gray-400">
+                <CardContent className="text-base text-gray-300">
                   {card.content}
                 </CardContent>
               )}
@@ -56,39 +58,50 @@ const EnhancedCardLayout: React.FC = () => {
 
 const cards = [
   {
-    title: "Create Solidity code for blockchain projects with ease using our app, supporting robust smart contracts",
+    title:
+      "Create Solidity code for blockchain projects with ease using our app, supporting robust smart contracts",
   },
   {
-    title: "Seamlessly connect Metamask or other crypto wallets for a secure experience",
+    title:
+      "Seamlessly connect Metamask or other crypto wallets for a secure experience",
   },
   {
-    title: "Test and debug smart contracts in a safe, simulated blockchain environment",
-    content: "Receive step-by-step explanations for every block of code, making it beginner-friendly. Get user confirmations for inputs and tailor outputs based on their needs.",
+    title:
+      "Test and debug smart contracts in a safe, simulated blockchain environment",
+    content:
+      "Receive step-by-step explanations for every block of code, making it beginner-friendly. Get user confirmations for inputs and tailor outputs based on their needs.",
     large: true,
   },
   {
-    title: "Gain in-depth explanations of how the code works and how to implement it effectively.",
+    title:
+      "Gain in-depth explanations of how the code works and how to implement it effectively.",
   },
   {
-    title: "Empower anyone to launch blockchain projects without coding expertise.",
-    content: "Speed up blockchain project creation and innovation in the Web3 ecosystem.",
+    title:
+      "Empower anyone to launch blockchain projects without coding expertise.",
+    content:
+      "Speed up blockchain project creation and innovation in the Web3 ecosystem.",
     large: true,
   },
   {
-    title: "Allow users to prioritize business and creative ideas without technical constraints.",
+    title:
+      "Allow users to prioritize business and creative ideas without technical constraints.",
   },
   {
-    title: "We prioritize robust security measures in our code to protect users from vulnerabilities and unauthorized access",
-    content: "Our code adheres to industry standards and regulations, minimizing risks and ensuring a safe and reliable user experience",
+    title:
+      "We prioritize robust security measures in our code to protect users from vulnerabilities and unauthorized access",
+    content:
+      "Our code adheres to industry standards and regulations, minimizing risks and ensuring a safe and reliable user experience",
     large: true,
   },
   {
-    title: "Utilize AI-driven input validation to refine user inputs and provide clear, actionable suggestions",
+    title:
+      "Utilize AI-driven input validation to refine user inputs and provide clear, actionable suggestions",
   },
   {
-    title: "Design and generate smart contracts optimized for minimal gas fees, ensuring cost-effective blockchain interactions",
+    title:
+      "Design and generate smart contracts optimized for minimal gas fees, ensuring cost-effective blockchain interactions",
   },
 ];
 
 export default EnhancedCardLayout;
-
