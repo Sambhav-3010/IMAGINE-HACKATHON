@@ -1,20 +1,18 @@
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
-import Hero from "@/components/Hero"
-import CardLayout from '@/components/CardLayout'
-import Faq from '@/components/Faq.tsx'
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from "@/Pages/Home"
+import Console from "@/Pages/Console"
 
 function App() {
 
   return (
     <>
     <div>
-      <Navbar />
-      <Hero />
-      <CardLayout />
-      <Faq />
-      <Footer />
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/console" element={<Console />} />
+      </Routes>
+    </Router>
     </div>
     </>
   )
