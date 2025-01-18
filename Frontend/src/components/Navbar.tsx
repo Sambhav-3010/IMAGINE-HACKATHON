@@ -2,21 +2,22 @@ import React, { useRef, useState } from 'react';
 import { motion, useMotionValue, useTransform, useSpring, AnimatePresence } from 'framer-motion';
 import { Button } from "./ui/button";
 import { Home, BookOpenCheck, Mail, Menu, User } from 'lucide-react';
+import { Link } from 'react-scroll';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   let mouseX = useMotionValue(Infinity);
 
   const navItems = [
-    { title: 'Home', href: '#home', icon: Home },
-    { title: 'About', href: '#about', icon: BookOpenCheck },
-    { title: 'Contact', href: '#contact', icon: Mail },
-    { title: 'Profile', href: '#profile', icon: User },
+    { title: 'Home', href: 'home', icon: Home },
+    { title: 'Features', href: 'about', icon: BookOpenCheck },
+    { title: 'Roadmap', href: 'contact', icon: Mail },
+    { title: 'Profile', href: 'profile', icon: User },
   ];
 
   return (
     <div className="fixed top-20 left-1/2 transform -translate-x-1/2 text-white z-50 rounded-full bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg">
-      <nav 
+      <nav
         className="container mx-auto flex justify-center items-end h-16 px-4"
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
@@ -41,16 +42,18 @@ const Navbar = () => {
             className="md:hidden mt-2 px-4 pb-4"
           >
             {navItems.map((item) => (
-              <a 
-                key={item.title} 
-                href={item.href}
-                className="block py-2 px-4 text-white hover:bg-white hover:bg-opacity-20 rounded-lg transition-all duration-300"
+              <Link
+                key={item.title}
+                to={item.href}
+                smooth={true}
+                duration={500}
+                className="block py-2 px-4 text-white hover:bg-white hover:bg-opacity-20 rounded-lg transition-all duration-300 cursor-pointer"
               >
                 <span className="flex items-center">
                   <item.icon className="h-6 w-6" />
                   <span className="ml-2">{item.title}</span>
                 </span>
-              </a>
+              </Link>
             ))}
           </motion.div>
         )}
@@ -75,10 +78,13 @@ const NavItem = ({ mouseX, title, href, icon: Icon }) => {
   const height = useSpring(heightTransform, { mass: 0.1, stiffness: 150, damping: 12 });
 
   return (
-    <a 
-      href={href}
+    <Link
+      to={href}
+      smooth={true}
+      duration={500}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      className="cursor-pointer"
     >
       <motion.div
         ref={ref}
@@ -87,7 +93,7 @@ const NavItem = ({ mouseX, title, href, icon: Icon }) => {
         whileHover={{ y: -10 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
-        <motion.div 
+        <motion.div
           className="absolute inset-0 flex items-center justify-center"
           initial={{ scale: 1 }}
           animate={{ scale: isHovered ? 1.2 : 1 }}
@@ -108,9 +114,8 @@ const NavItem = ({ mouseX, title, href, icon: Icon }) => {
           )}
         </AnimatePresence>
       </motion.div>
-    </a>
+    </Link>
   );
 };
 
 export default Navbar;
-
