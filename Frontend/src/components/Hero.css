@@ -1,11 +1,9 @@
 .hero{
     height: 50vh;
     width: 40vw;
-    background: #000;
 }
 
 .hero1{
-    background: red;
-    height: 80%;
-    width: 80%;
+    height: 90%;
+    width: 90%;
 }
