@@ -30,6 +30,7 @@ const Home = () => {
       <Faq />
       <Footer />
     </div>
+    </div>
   );
 };
 
