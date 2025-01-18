@@ -41,12 +41,12 @@ const Hero: React.FC = () => {
   return (
     <div className="flex flex-col items-center gap-20 justify-center min-h-screen text-white ">
       <div className="hero flex flex-col items-center justify-center rounded-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg p-8 shadow-2xl border border-white/20">
-        <h1 className="hero1 flex flex-col items-center justify-center text-4xl bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-blue-500 to-purple-600 font-bold text-center drop-shadow-lg p-6">
+        <h1 className="hero1 flex flex-col items-center justify-center text-6xl bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-blue-500 to-purple-600 font-bold text-center drop-shadow-lg p-6">
           <div
             ref={textRef}
             id="text"
-            className="text-3xl mb-8 text-center drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-blue-500 to-purple-600"
-            style={{ minHeight: "3em", maxWidth: "18em", padding: "0.5em" }}
+            className="text-5xl mb-8 text-center drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-blue-500 to-purple-600"
+            style={{ minHeight: "4em", maxWidth: "18em", padding: "0.5em" }}
           ></div>
           <Button className="mt-4 bg-gradient-to-r from-green-400 to-blue-600 hover:from-green-500 hover:to-blue-700 text-white px-6 py-3 rounded-full shadow-lg transition-transform transform hover:scale-105">
             Click me
