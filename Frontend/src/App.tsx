@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import Hero from "@/components/Hero"
 import CardLayout from '@/components/CardLayout'
-import Faq from '@/components/Faq'
+import Faq from '@/components/Faq.tsx'
 
 
 function App() {
