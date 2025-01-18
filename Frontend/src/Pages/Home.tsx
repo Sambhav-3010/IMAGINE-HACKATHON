@@ -8,7 +8,7 @@ import Footer from "@/components/Footer"
 
 const Home = () => {
   return (
-    <div>
+    <div className='bg-gradient-to-br from-black via-gray-800 to-black'>
       <Navbar />
       <Hero />
       <CardLayout />

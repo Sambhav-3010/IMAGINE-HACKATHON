@@ -11,7 +11,7 @@ import Console from "@/Pages/Console"
 function App() {
   return (
     <>
-    <div className="bg-gradient-to-br from-black via-gray-800 to-black">
+    <div>
     <Router>
       <Routes>
         <Route path="/" element={<Home/>} />
