@@ -8,7 +8,7 @@ import {
 
 const Faq: React.FC = () => {
   return (
-    <div className="m-10 px-20 py-10">
+    <div className=" text-white m-10 px-20 py-10">
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger>What is your return policy?</AccordionTrigger>
