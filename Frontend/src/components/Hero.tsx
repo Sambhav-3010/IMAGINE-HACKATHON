@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
           } else {
             clearInterval(intervalId!);
             intervalId = null;
-            setTimeout(remove, 1000);
+            setTimeout(remove, 200);
           }
         }, 75); // Typing speed
       }
@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
             clearInterval(intervalId!);
             intervalId = null;
             currentWordIndex = (currentWordIndex + 1) % words.length;
-            setTimeout(type, 1000);
+            setTimeout(type, 200);
           }
         }, 75); // Removing speed
       }
