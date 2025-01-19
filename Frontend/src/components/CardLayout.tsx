@@ -9,7 +9,7 @@ const EnhancedCardLayout: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className="py-48 px-24 min-h-screen">
+    <div className="py-48 px-40 min-h-screen">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {cards.map((card, index) => (
           <div

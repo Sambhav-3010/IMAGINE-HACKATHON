@@ -3,15 +3,15 @@ import { motion } from "framer-motion";
 
 const Roadmap: React.FC = () => {
   const roadmapData = [
-    { id: 1, title: "Mathematics", description: "Understanding linear algebra, calculus, probability, and optimization.", color: "bg-blue-900" },
-    { id: 2, title: "Statistics", description: "Exploring probability distributions, hypothesis testing, and statistical analysis.", color: "bg-blue-700" },
-    { id: 3, title: "Programming", description: "Learning Python, data structures, algorithms, and relevant libraries.", color: "bg-blue-500" },
-    { id: 4, title: "Data Science & Exploratory Data Analysis", description: "Working with datasets, visualization, and feature engineering.", color: "bg-teal-500" },
-    { id: 5, title: "Machine Learning", description: "Understanding supervised and unsupervised learning techniques.", color: "bg-teal-600" },
-    { id: 6, title: "Deep Learning", description: "Exploring neural networks, CNNs, RNNs, and transformers.", color: "bg-teal-700" },
-    { id: 7, title: "Advanced AI & ML Topics", description: "Studying NLP, reinforcement learning, and generative models.", color: "bg-amber-700" },
-    { id: 8, title: "Hands-On Projects & Competitions", description: "Building real-world AI/ML projects and participating in Kaggle.", color: "bg-amber-600" },
-  ];
+    { id: 1, title: "Build Your Frontend", description: "Create your frontend using your preferred framework or library.", color: "bg-blue-900" },
+    { id: 2, title: "Prompt for Web3 Code", description: "Answer simple prompts to generate the required Web3 functionality.", color: "bg-blue-700" },
+    { id: 3, title: "Understand the Code", description: "Review and customize the generated code in our integrated IDE.", color: "bg-blue-500" },
+    { id: 4, title: "Connect MetaMask Wallet", description: "Log in to your MetaMask wallet for blockchain interaction.", color: "bg-teal-600" },
+    { id: 5, title: "Deploy Code", description: "Automatically deploy the Web3 functionality with a single click.", color: "bg-teal-700" },
+    { id: 6, title: "Import a Single File", description: "Download and import the Web3 file into your frontend project.", color: "bg-amber-600" },
+    { id: 7, title: "Web3 Website Ready", description: "Your Web3-enabled website or app is live in minutes!", color: "bg-amber-700" },
+];
+
 
   return (
     <div className="flex flex-col items-center">
@@ -27,10 +27,10 @@ const Roadmap: React.FC = () => {
             viewport={{ once: true }}
           >
             <div
-              className={`rounded-2xl relative p-6 shadow-md text-left ${item.color} text-white cursor-pointer ${index % 2 === 0 ? "ml-4" : "mr-4"}`}
+              className={`rounded-2xl relative p-6 shadow-md text-left ${item.color} text-white cursor-pointer mx-10 `}
             >
-              <h3 className="text-lg font-semibold">{item.title}</h3>
-              <p className="text-sm">{item.description}</p>
+              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <p className="text-base">{item.description}</p>
             </div>
           </motion.div>
         ))}
