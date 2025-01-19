@@ -30,7 +30,7 @@ const Faq: React.FC = () => {
           You’ll import this file into your frontend project to deploy the Web3 functionality.
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-3">
+        <AccordionItem value="item-4">
           <AccordionTrigger>What if I don’t have cryptocurrency?</AccordionTrigger>
           <AccordionContent>
           You can use testnet faucets to get free test cryptocurrency for testing purposes. For mainnet deployment, you’ll need to purchase cryptocurrency through exchanges.

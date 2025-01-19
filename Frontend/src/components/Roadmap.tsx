@@ -8,7 +8,6 @@ const Roadmap: React.FC = () => {
     { id: 3, title: "Understand the Code", description: "Review and customize the generated code in our integrated IDE.", color: "bg-blue-500" },
     { id: 4, title: "Connect MetaMask Wallet", description: "Log in to your MetaMask wallet for blockchain interaction.", color: "bg-teal-600" },
     { id: 5, title: "Deploy Code", description: "Automatically deploy the Web3 functionality with a single click.", color: "bg-teal-700" },
-    { id: 6, title: "Import a Single File", description: "Download and import the Web3 file into your frontend project.", color: "bg-amber-600" },
     { id: 7, title: "Web3 Website Ready", description: "Your Web3-enabled website or app is live in minutes!", color: "bg-amber-700" },
 ];
 
