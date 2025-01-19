@@ -7,8 +7,8 @@ import AnimatedLogo from "./AnimatedLogo";
 const Hero: React.FC = () => {
   const textRef = useRef<HTMLDivElement>(null);
   const words = [
-    "End to End solution for Web3 deployment in just few clicks",
-    "",
+    "End to End solution for Web3 deployment in just a few clicks",
+    "Deploy Web3 functionality with ease",
   ];
 
   useEffect(() => {
@@ -18,16 +18,19 @@ const Hero: React.FC = () => {
 
     const type = () => {
       if (textRef.current) {
+        textRef.current.textContent = ""; // Clear text before typing a new word
         intervalId = setInterval(() => {
           if (currentCharIndex < words[currentWordIndex].length) {
-            if (textRef.current) {
-              textRef.current.textContent +=
-                words[currentWordIndex][currentCharIndex];
-            }
+            textRef.current!.textContent +=
+              words[currentWordIndex][currentCharIndex];
             currentCharIndex++;
           } else {
             clearInterval(intervalId!);
-            intervalId = null;
+            setTimeout(() => {
+              currentWordIndex = (currentWordIndex + 1) % words.length;
+              currentCharIndex = 0;
+              type();
+            }, 2000); // Delay before switching to the next word
           }
         }, 75); // Typing speed
       }
@@ -43,20 +46,22 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center gap-20 justify-center min-h-screen text-white ">
+    <div className="flex flex-col items-center gap-20 justify-center min-h-screen text-white">
       <div className="hero flex flex-col items-center justify-center rounded-xl bg-gradient-to-br from-white/5 to-white/5 backdrop-blur-lg p-8 shadow-2xl border border-white/20">
-        <h1 className="pt-8 text-7xl text-white font-bold text-center drop-shadow-lg">scDev.ai</h1>
-        <p className="hero1 flex flex-col items-center justify-center text-4xl text-white font-bold text-center drop-shadow-lg py-4 px-6">
+        <h1 className="pt-12 text-7xl text-white font-bold text-center drop-shadow-lg">
+          scDev.ai
+        </h1>
+        <div className="flex flex-col items-center justify-center text-center py-4 px-6">
           <div
             ref={textRef}
             id="text"
-            className="text-2xl text-center drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-blue-500 to-purple-600"
+            className="text-4xl text-center drop-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-blue-500 to-purple-600"
             style={{ minHeight: "5em", maxWidth: "18em", padding: "0.5em" }}
           ></div>
-          <Button className=" bg-gradient-to-r from-green-400 to-blue-600 hover:from-green-500 hover:to-blue-700 text-white text-lg px-8 py-6 rounded-full shadow-lg transition-transform transform hover:scale-105">
+          <Button className="text-lg bg-gradient-to-r from-green-400 to-blue-600 hover:from-green-500 hover:to-blue-700 text-white px-6 py-3 rounded-full shadow-lg transition-transform transform hover:scale-105">
             Try Now
           </Button>
-        </p>
+        </div>
       </div>
       <AnimatedLogo />
     </div>
