@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Contract Generator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      #output {
+        white-space: pre-wrap;
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Smart Contract Generator</h1>
+    <p>Enter your prompt below:</p>
+    <textarea id="prompt" rows="5" cols="60"></textarea><br /><br />
+    <button onclick="generateContract()">Generate</button>
+    <h2>Response:</h2>
+    <div id="output"></div>
+
+    <script>
+      async function generateContract() {
+        const prompt = document.getElementById("prompt").value;
+        const output = document.getElementById("output");
+        output.textContent = "Generating...";
+
+        try {
+          const response = await fetch("/generate", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ prompt }),
+          });
+
+          if (!response.ok) {
+            const error = await response.json();
+            output.textContent = `Error: ${
+              error.error || "Something went wrong."
+            }`;
+            console.error(
+              "Error details:",
+              error.details || "No additional information."
+            );
+            return;
+          }
+
+          const data = await response.json();
+          output.textContent = JSON.stringify(data, null, 4);
+        } catch (err) {
+          output.textContent = `Error: ${err.message}`;
+          console.error(err);
+        }
+      }
+      async function getContract(prompt) {
+        try {
+          const response = await fetch(
+            `/generate/${encodeURIComponent(prompt)}`
+          ); // Encode the prompt
+          if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error || "Failed to retrieve contract.");
+          }
+          const data = await response.json();
+          return data;
+        } catch (error) {
+          console.error("Error retrieving contract:", error);
+          throw error; // Re-throw for handling by the caller
+        }
+      }
+      const promptToRetrieve =
+        "i want to create a smart contract for my school social media app";
+      getContract(promptToRetrieve)
+        .then((contract) => {
+          console.log("Retrieved contract:", contract);
+          // Display the retrieved contract
+        })
+        .catch((error) => {
+          // Handle the error
+        });
+    </script>
+  </body>
+</html>
