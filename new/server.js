@@ -1,43 +1,57 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const axios = require('axios');
-const fs = require('fs');
-const path = require('path');
+
 const app = express();
-const PORT = 3000;
+app.use(bodyParser.json());
 
-app.use(express.json());
-
-
-async function sendMessage(message, sessionId) {
-    const response = await fetch('https://deploy-tawny-tau.vercel.app/api/chat', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            session_id: sessionId,
-            message: message
-        })
-    });
-    return await response.json();
+// Mock function to simulate create_model and start_chat
+function createModel() {
+  return {
+    startChat: () => ({
+      sendMessage: async (message) => {
+        // Simulating an external API or response generation
+        const response = await axios.post('https://deploy-tawny-tau.vercel.app/api/chat', { message });
+        return response.data;
+      },
+    }),
+  };
 }
 
-app.post('/send-message', async (req, res) => {
-    const { message, sessionId } = req.body;
+// Chat API endpoint
+app.post('/api/chat', async (req, res) => {
+  try {
+    const { message } = req.body;
 
-    if (!message || !sessionId) {
-        return res.status(400).json({ error: 'Message and sessionId are required' });
+    if (!message) {
+      return res.status(400).json({ error: 'Missing message' });
     }
 
-    try {
-        const response = await sendMessage(message, sessionId);
-        res.json(response);
-    } catch (error) {
-        res.status(500).json({ error: 'Failed to send message to Vercel API' });
+    // Handle trial message with consistent response format
+    if (message.trim().toLowerCase() === 'trial') {
+      return res.json({
+        response: 'This is a trial message response.',
+      });
     }
+
+    // Create a new chat model and start a chat session
+    const model = createModel();
+    const chatSession = model.startChat();
+
+    // Get the response from the simulated chat session
+    const response = await chatSession.sendMessage(message);
+
+    res.json({
+      response: response.text,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
 });
 
 // Start the server
+const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
