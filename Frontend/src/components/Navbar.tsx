@@ -148,7 +148,7 @@ const NavItem = ({ mouseX, title, href, icon: Icon }) => {
       <motion.div
         ref={ref}
         style={{ width, height }}
-        className="relative flex items-center justify-center rounded-full bg-black dark:bg-neutral-800"
+        className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg relative flex items-center justify-center rounded-full bg-black dark:bg-neutral-800"
         whileHover={{ y: -10 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
