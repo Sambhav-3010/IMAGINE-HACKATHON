@@ -15,7 +15,6 @@ const Roadmap: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="text-3xl font-bold mb-10 text-white">AI/ML Roadmap</h1>
       <div className="relative flex flex-col items-center w-full max-w-4xl">
         {roadmapData.map((item, index) => (
           <motion.div
