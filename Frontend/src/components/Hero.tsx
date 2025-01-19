@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center gap-20 justify-center min-h-screen text-white ">
-      <div className="hero flex flex-col items-center justify-center rounded-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg p-8 shadow-2xl border border-white/20">
+      <div className="hero flex flex-col items-center justify-center rounded-xl bg-gradient-to-br from-white/5 to-white/5 backdrop-blur-lg p-8 shadow-2xl border border-white/20">
         <h1 className="hero1 flex flex-col items-center justify-center text-6xl bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-blue-500 to-purple-600 font-bold text-center drop-shadow-lg p-6">
           <div
             ref={textRef}

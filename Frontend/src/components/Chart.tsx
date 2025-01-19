@@ -69,7 +69,7 @@ export default function Component() {
 
   return (
     <>
-        <div className="mb-28 p-4 rounded-lg shadow-lg flex justify-center items-center">
+        <div className="mb-28 p-4 rounded-lg flex justify-center items-center">
         <Card className="max-w-sm">
             <CardHeader className="pb-4">
                 <CardTitle className="text-base">Line Chart - Real-time</CardTitle>
@@ -120,7 +120,7 @@ export default function Component() {
             <div>
                 <div className="text-sm text-white mt-2 p-10">
                     <h1 className="text-4xl">Realtime Web3 perfomance monitoring.</h1>
-                    <p className="py-4">Monitor your web3 application performance in realtime with our easy to use dashboard.</p>
+                    <p className="py-4 text-base">Monitor your web3 application performance in realtime with our easy to use dashboard.</p>
                 </div>
             </div>
         </div>

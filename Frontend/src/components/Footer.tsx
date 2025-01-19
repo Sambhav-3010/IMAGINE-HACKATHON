@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
       <div className="container text-center flex flex-col items-center space-y-2">
       <p className="text-sm">&copy; 2025 Logo. All rights reserved.</p>
       <p className="text-xs text-white">
-        Built with <span className="">🦤</span> by Your Team
+        Built with <span className="">🦤</span> by AlgoHustlers
       </p>
       </div>
     </footer>
